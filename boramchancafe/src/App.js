@@ -15,8 +15,8 @@ function App() {
         <h1>보람찬 카페</h1>
         <button
           onClick={() => {
-            const tempArray = 글제목;
-            tempArray[1] = '회기동 커피추천';
+            const tempArray = [...글제목];
+            tempArray[0] = '회기동 커피추천';
             글제목변경(tempArray);
           }}
         >
