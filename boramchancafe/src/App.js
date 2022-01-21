@@ -11,44 +11,33 @@ function App() {
   let [like, likeOnClick] = useState(0);
   return (
     <div className="App">
+      <Modal />
       <div className="global-nav">
         <h1>보람찬 카페</h1>
-        <button
-          onClick={() => {
-            const tempArray = [...글제목];
-            tempArray[0] = '회기동 커피추천';
-            글제목변경(tempArray);
-          }}
-        >
-          글 수정
-        </button>
       </div>
+      {글제목.map((title) => {
+        return (
+          <ul className="post-main-lists">
+            <li>
+              {title}
+              {/* index가 들어가는 것이 아니라 elements가 각각 title에 들어가므로 
+              글제목[title]과 같은 씽크빅하면 안 된다 */}
+              <span>👍</span>
+            </li>
+            <img alt="대체 텍스트, 나뭇잎 먹는 쿼카" src={ALTER_IMG} />
+          </ul>
+        );
+      })}{' '}
+    </div>
+  );
+}
 
-      <section className="post-main--contents">
-        <ul className="post-main-lists">
-          <li>
-            {글제목[0]}
-            <span
-              onClick={() => {
-                likeOnClick(like + 1);
-              }}
-            >
-              👍
-            </span>
-            {like}
-          </li>
-          <img alt="대체 텍스트, 나뭇잎 먹는 쿼카" src={ALTER_IMG} />
-        </ul>
-        <ul className="post-main-lists">
-          {' '}
-          <li>{글제목[1]}</li>{' '}
-          <img alt="대체 텍스트, 나뭇잎 먹는 쿼카" src={ALTER_IMG} />
-        </ul>
-        <ul className="post-main-lists">
-          {' '}
-          <li>{글제목[2]}</li>{' '}
-        </ul>
-      </section>
+function Modal() {
+  return (
+    <div>
+      <h1>공지사항</h1>
+      <h2>공지내용</h2>
+      <span>날짜</span>
     </div>
   );
 }
