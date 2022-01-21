@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Navbar, Container, Nav } from 'react-bootstrap';
 import IMG_1 from './img/1.jpg';
 import IMG_2 from './img/2.jpg';
 import IMG_3 from './img/3.jpg';
@@ -19,10 +20,16 @@ function App() {
 
   return (
     <div className="App">
-      <div className="global-nav">
-        <h1>보람찬 카페</h1>
-      </div>
-
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">보람찬한잔</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">TBD</Nav.Link>
+            <Nav.Link href="#features">TBD</Nav.Link>
+            <Nav.Link href="#pricing">TBD</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
       {글제목.map((title, i) => {
         return (
           <div className="post-main-lists" key={i}>
@@ -70,11 +77,7 @@ function App() {
         더보기🙋
       </button>
       {modalSwitch === true ? (
-        <Modal
-          글제목={글제목}
-          ClickedModalTitle={ClickedModalTitle}
-          displayImgs={displayImgs}
-        />
+        <Modal 글제목={글제목} ClickedModalTitle={ClickedModalTitle} />
       ) : null}
     </div>
   );
@@ -84,7 +87,7 @@ function Modal(props) {
   return (
     <div className="modal">
       <h1>{props.글제목[props.ClickedModalTitle]}</h1>
-      <h2> {props.displayImgs[1]} </h2>
+      {/* <h2> {props.displayImgs[1]} </h2> */}
       <span>날짜</span>
     </div>
   );
