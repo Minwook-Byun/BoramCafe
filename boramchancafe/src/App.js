@@ -30,7 +30,7 @@ function App() {
                 modalSwitchToggle(modalSwitch === false);
               }}
             >
-              정보 더보기🙋
+              더보기🙋
             </button>
             {modalSwitch === true ? <Modal /> : null}
           </ul>
