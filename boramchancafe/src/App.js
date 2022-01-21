@@ -4,6 +4,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap';
 import IMG_1 from './img/1.jpg';
 import IMG_2 from './img/2.jpg';
 import IMG_3 from './img/3.jpg';
+import Post from './posts';
 
 function App() {
   let [글제목, 글제목변경] = useState([
@@ -22,35 +23,16 @@ function App() {
     <div className="App">
       <Navbar bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">보람찬한잔</Navbar.Brand>
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#home">TBD</Nav.Link>
-            <Nav.Link href="#features">TBD</Nav.Link>
-            <Nav.Link href="#pricing">TBD</Nav.Link>
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
-      {글제목.map((title, i) => {
-        return (
-          <div className="post-main-lists" key={i}>
-            <ul>
-              <li>
-                <h2
-                  onClick={() => {
-                    ChangeModalTitle(i);
-                  }}
-                >
-                  {title}
-                </h2>
-                {/* index가 들어가는 것이 아니라 elements가 각각 title에 들어가므로 
-              글제목[title]과 같은 씽크빅하면 안 된다 */}
-                <span>👍</span>
-              </li>
-              <img alt="대체 텍스트, 나뭇잎 먹는 쿼카" src={displayImgs[i]} />
-            </ul>
-          </div>
-        );
-      })}
+
+      <Post />
 
       <div className="publish-input">
         <input
