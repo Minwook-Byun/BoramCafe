@@ -9,9 +9,9 @@ function App() {
     '보람이 다녀온 곳3',
   ]);
   let [like, likeOnClick] = useState(0);
+  let [modalSwitch, modalSwitchToggle] = useState(true);
   return (
     <div className="App">
-      <Modal />
       <div className="global-nav">
         <h1>보람찬 카페</h1>
       </div>
@@ -25,6 +25,14 @@ function App() {
               <span>👍</span>
             </li>
             <img alt="대체 텍스트, 나뭇잎 먹는 쿼카" src={ALTER_IMG} />
+            <button
+              onClick={() => {
+                modalSwitchToggle(modalSwitch === false);
+              }}
+            >
+              정보 더보기🙋
+            </button>
+            {modalSwitch === true ? <Modal /> : null}
           </ul>
         );
       })}{' '}
@@ -35,8 +43,8 @@ function App() {
 function Modal() {
   return (
     <div>
-      <h1>공지사항</h1>
-      <h2>공지내용</h2>
+      <h1>이름</h1>
+      <h2>내용</h2>
       <span>날짜</span>
     </div>
   );
