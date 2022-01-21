@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import './App.css';
-import ALTER_IMG from './img/alter_img.PNG';
 import IMG_1 from './img/1.jpg';
 import IMG_2 from './img/2.jpg';
 import IMG_3 from './img/3.jpg';
