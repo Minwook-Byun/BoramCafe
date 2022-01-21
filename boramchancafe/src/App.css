@@ -16,3 +16,7 @@ body {
   font-weight: 600;
 }
 
+.modal{
+  background-color : #eeeeee;
+  color : #000000;
+}
