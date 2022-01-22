@@ -3,6 +3,9 @@ import './App.css';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import Post from './posts';
 
+// 라우팅 관련
+import { Link, Route, Switch } from 'react-router-dom';
+
 function App() {
   return (
     <div className="App">
@@ -17,8 +20,16 @@ function App() {
         </Container>
       </Navbar>
 
-      <Post />
-      <Post />
+      {/* 메인페이지 */}
+      <Route exact path="/">
+        <Post />
+        <Post />
+      </Route>
+
+      {/* 상세 페이지 */}
+      <Route exact path="/details">
+        <div>ㅎㅇ 저 상세 페이지임</div>
+      </Route>
     </div>
   );
 }
